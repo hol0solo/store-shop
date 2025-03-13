@@ -1,42 +1,42 @@
-# Store Server
+# Сервер магазина
 
-The project for study Django.
+Проект для изучения Django. Взято с Stepik.
 
-#### Stack:
+#### Стек:
 
 - [Python](https://www.python.org/downloads/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Redis](https://redis.io/)
 
-## Local Developing
+## Локальная разработка
 
-All actions should be executed from the source directory of the project and only after installing all requirements.
+Все команды выполняются из корневой директории проекта после установки зависимостей.
 
-1. Firstly, create and activate a new virtual environment:
+1. Создайте и активируйте виртуальное окружение:
    ```bash
    python3.9 -m venv ../venv
    source ../venv/bin/activate
    ```
    
-2. Install packages:
+2. Установите пакеты:
    ```bash
    pip install --upgrade pip
    pip install -r requirements.txt
    ```
    
-3. Run project dependencies, migrations, fill the database with the fixture data etc.:
+3. Выполните миграции и загрузите фикстуры:
    ```bash
    ./manage.py migrate
-   ./manage.py loaddata <path_to_fixture_files>
+   ./manage.py loaddata <путь_к_фикстурам>
    ./manage.py runserver 
    ```
    
-4. Run [Redis Server](https://redis.io/docs/getting-started/installation/):
+4. Запустите [Redis Server](https://redis.io/docs/getting-started/installation/):
    ```bash
    redis-server
    ```
    
-5. Run Celery:
+5. Запустите Celery:
    ```bash
    celery -A store worker --loglevel=INFO
    ```
